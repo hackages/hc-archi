@@ -26,7 +26,7 @@ const routes: Routes = [
   }
 ];
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 class AppCustomStrategy extends PreloadingStrategy {
   preload(route: Route, load: () => Observable<any>): Observable<any> {
     if (route.data && route.data.preload) {
